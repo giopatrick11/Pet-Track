@@ -1,0 +1,535 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  overflow-y: scroll;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: hidden;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #050e1b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.site-header {
+  background: linear-gradient(90deg, #020b18, #051428);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.8rem 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header-logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.header-logo:hover {
+  color: #00c2ff;
+}
+
+.nav-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 40px;
+  padding: 0.4rem 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-list a {
+  text-decoration: none;
+  color: #bcd0e5;
+  transition: color 0.2s ease;
+}
+.nav-list a:hover,
+.nav-list a.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+.cta-btn {
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.cta-btn:hover {
+  background: #00c2ff;
+}
+
+.hero {
+  background: linear-gradient(180deg, #050e1b 0%, #07172e 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.25rem;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-copy h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.hero-copy .lead {
+  color: #bcd0e5;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #00c2ff;
+  color: #000;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: #fff;
+}
+
+.pet-placeholder {
+  width: 220px;
+  height: 140px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: #00c2ff;
+  border: 2px dashed rgba(0, 194, 255, 0.3);
+}
+
+.features {
+  background: radial-gradient(circle at top left, #061429, #030a18 70%);
+  padding: 6rem 1.5rem;
+  text-align: center;
+}
+
+#features-heading {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+#features-subheading {
+  color: #007acc;
+  margin-bottom: 3rem;
+}
+
+.feature-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  position: relative;
+  overflow: hidden;
+  background-color: #ebfffc;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #d4f7ff;
+}
+
+.tab-btn.active {
+  background-color: #500ae4;
+  color: #fff;
+}
+
+.tab-btn .progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: #00c2ff;
+  border-radius: 10px;
+  transition: width 5s linear;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 250px;
+}
+
+.feature {
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 25px rgba(0, 194, 255, 0.15);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.feature:not(.hidden) {
+  opacity: 1;
+}
+.feature h3 {
+  color: #00c2ff;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.feature p {
+  color: #bcd0e5;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.hidden {
+  display: none;
+}
+
+.site-footer {
+  background: linear-gradient(180deg, #030a16, #01050b);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #fff;
+  padding: 3rem 1.5rem;
+  margin-top: 4rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #00c2ff;
+  text-decoration: none;
+}
+
+.footer-tagline {
+  color: #bcd0e5;
+  font-size: 0.95rem;
+  max-width: 280px;
+  line-height: 1.4;
+}
+
+.footer-btn {
+  display: inline-block;
+  background: #00c2ff;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+.footer-btn:hover {
+  background: #fff;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+}
+.social-icon {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  background: #00c2ff;
+  color: #000;
+}
+
+@media (max-width: 700px) {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.idea-section,
+.team-section {
+  background: radial-gradient(circle at top left, #061429, #030a18 70%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem;
+}
+
+.idea-container,
+.team-container {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  max-width: 850px;
+  box-shadow: 0 0 30px rgba(0, 194, 255, 0.15);
+  line-height: 1.7;
+}
+.idea-container h1,
+.team-container h1 {
+  color: #00c2ff;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.idea-container p,
+.team-container p {
+  color: #bcd0e5;
+}
+
+.team-section {
+  min-height: auto;
+  padding: 4rem 1.5rem;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.profile-photo img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 194, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-info {
+  max-width: 500px;
+  text-align: left;
+}
+
+.profile-info h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #00c2ff;
+  margin-bottom: 0.4rem;
+}
+
+.profile-info .role {
+  font-weight: 600;
+  color: #bcd0e5;
+  margin-bottom: 1rem;
+}
+
+.profile-info .bio {
+  color: #bcd0e5;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-info {
+    text-align: center;
+  }
+}
+
+/* ===========================
+   LIGHT MODE OVERRIDES
+=========================== */
+.light-mode {
+  background: #f8f8f8;
+  color: #111;
+}
+
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4 {
+  color: #003366;
+}
+
+.light-mode p,
+.light-mode li,
+.light-mode .lead,
+.light-mode .footer-tagline,
+.light-mode .role,
+.light-mode .bio {
+  color: #333;
+}
+
+.light-mode .site-header,
+.light-mode .site-footer {
+  background: #fff;
+  color: #000;
+}
+
+.light-mode .nav-list a {
+  color: #003366;
+}
+
+.light-mode .nav-list a.active,
+.light-mode .nav-list a:hover {
+  color: #007acc;
+  font-weight: 600;
+}
+
+.light-mode a {
+  color: #007acc;
+}
+
+.light-mode .idea-container,
+.light-mode .team-container {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #222;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.light-mode body {
+  background: #f0f0f0; /* same as your light sections */
+  color: #111;
+}
+
+.light-mode .hero,
+.light-mode .features,
+.light-mode .idea-section,
+.light-mode .team-section {
+  background: #f0f0f0;
+  color: #000;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+.light-mode .feature {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+.light-mode .feature h3 {
+  color: #007acc;
+}
+
+.light-mode .btn,
+.light-mode .cta-btn,
+.light-mode .footer-btn {
+  background: #007acc;
+  color: #fff;
+}
+
+.light-mode .btn:hover,
+.light-mode .cta-btn:hover,
+.light-mode .footer-btn:hover {
+  background: #005fa3;
+}
+
+.light-mode .social-icon {
+  background: rgba(0, 0, 0, 0.05);
+  color: #222;
+}
+
+.light-mode .social-icon:hover {
+  background: #007acc;
+  color: #fff;
+}
+
+.theme-btn {
+  background: #00c2ff;
+  border: none;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Fix dark strip in footer when in light mode */
+.light-mode .site-footer {
+  background: #fff !important;
+  background-image: none !important;
+}
+
+.home-hero {
+  padding-top: 6rem; /* same spacing as idea-section & team-section */
+}
