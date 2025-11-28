@@ -43,6 +43,9 @@ export default function Header({ title }) {
             <li>
               <Link to="/team">Team</Link>
             </li>
+            <li>
+              <Link to="/projects">Projects</Link>
+            </li>
           </ul>
         </nav>
 
