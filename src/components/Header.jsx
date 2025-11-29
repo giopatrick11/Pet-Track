@@ -20,15 +20,8 @@ export default function Header({ title }) {
     <header className="site-header">
       <div className="container header-inner">
         <div className="header-left">
-          <button
-            onClick={() => setIsLight((prev) => !prev)}
-            className="theme-btn"
-          >
-            {isLight ? "🌙 Dark Mode" : "☀️ Light Mode"}
-          </button>
-
           <Link id="logo" to="/" className="header-logo">
-            🐾 Pet Track
+            Pet Track
           </Link>
         </div>
 
